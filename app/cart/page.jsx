@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import product_img from "../assests/images/cart/product_img.png";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { FaRegHeart } from "react-icons/fa6";

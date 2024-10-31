@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export default function NewDropProducts({ product }) {
+export default function NewDropProducts({ product, button }) {
   return (
     <div className=" flex justify-center items-center w-fit">
       <div className=" flex flex-col gap-3">
@@ -12,8 +12,8 @@ export default function NewDropProducts({ product }) {
         />
         <h1 className=" text-2xl font-black text-[#232321]">{product.name}</h1>
         <button className=" bg-[#232321] px-2 py-3 text-sm font-bold text-white rounded-lg">
-          <span>VIEW PRODUCT -</span>{" "}
-          <span className=" text-[#FFA52F]">{product.price}</span>
+          <span>{button ? button : "VIEW PRODUCT -"}</span>{" "}
+          {!button && <span className=" text-[#FFA52F]">{product.price}</span>}
         </button>
       </div>
     </div>
