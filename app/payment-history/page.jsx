@@ -65,11 +65,13 @@ export default function page() {
     },
   ];
   return (
-    <div className=" p-10 flex flex-col gap-10">
-      <h1 className=" text-4xl font-bold ">Payment</h1>
-      <div className=" flex flex-col gap-10 px-12">
+    <div className=" px-3 py-8 sm:p-10 flex flex-col gap-6 sm:gap-10">
+      <h1 className=" text-3xl sm:text-4xl md:text-5xl font-bold">Payment</h1>
+      <div className=" flex flex-col gap-10 sm:px-5 md:px-7 lg:px-12">
         <div className=" my-5 flex flex-col gap-5">
-          <h1 className=" text-3xl font-bold text-stone-600">Add UPI id</h1>
+          <h1 className=" text-xl sm:text-2xl md:text-3xl font-bold text-stone-600">
+            Add UPI id
+          </h1>
           <input
             type="text"
             className=" bg-transparent border-b border-stone-500 placeholder:font-bold placeholder:text-xl py-1 px-10 w-full"
@@ -84,10 +86,12 @@ export default function page() {
             </button>
           </div>
         </div>
-        <h1 className=" text-4xl font-bold text-stone-600">History</h1>
-        <div className=" bg-gray-100 rounded-lg p-6">
+        <h1 className=" text-2xl sm:text-3xl md:text-4xl font-bold text-stone-600">
+          History
+        </h1>
+        <div className=" bg-gray-100 rounded-lg p-3 sm:p-6">
           <div className=" flex items-center justify-between">
-            <h2 className="text-lg font-bold mb-4">
+            <h2 className=" text-base sm:text-lg font-bold mb-4">
               Upi Id added History of last 3 months
             </h2>
             <BsThreeDotsVertical />
@@ -110,7 +114,7 @@ export default function page() {
                     <td className="py-3 text-gray-800">
                       {transaction.productName}
                     </td>
-                    <td className="py-3 text-gray-800">{transaction.date}</td>
+                    <td className="py-3 text-gray-800 px-1">{transaction.date}</td>
                     <td className="py-3 text-gray-800">{transaction.amount}</td>
                   </tr>
                 ))}

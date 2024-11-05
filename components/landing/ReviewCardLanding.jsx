@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ReviewCardLanding({ product }) {
   return (
-    <div className=" rounded-[1.9rem] bg-white">
+    <div className=" rounded-[1.9rem] bg-white w-80">
       <div className=" px-5 py-4 flex gap-5 items-start">
         <div className=" flex flex-col gap-1.5">
           <h1 className=" text-xl font-bold">{product.quality}</h1>

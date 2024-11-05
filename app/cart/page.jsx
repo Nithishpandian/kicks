@@ -8,44 +8,44 @@ import YouMayAlsoLike from "@/components/common/YouMayAlsoLike";
 
 export default function page() {
   return (
-    <div className=" flex flex-col gap-8 p-10">
+    <div className=" px-3 py-8 sm:p-5 md:p-9 lg:p-10 flex flex-col gap-6 sm:gap-10">
       <div className=" flex flex-col gap-2">
         <h1 className=" font-bold text-3xl">Saving to celebrate </h1>
         <p>
           Enjoy up to 60% off thousands of styles during the End of Year sale -
           while suppiles last. No code needed.
         </p>
-        <p className=" text-lg flex items-center gap-1.5">
+        <div className=" text-lg flex items-center gap-1.5">
           <p className=" underline">Join us</p> or{" "}
           <p className=" underline">Sign-in</p>
-        </p>
+        </div>
       </div>
-      <div className=" grid grid-cols-3 gap-4">
-        <div className=" col-span-2 bg-white rounded-xl p-5 flex flex-col gap-6">
+      <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className=" lg:col-span-2 bg-white rounded-xl p-5 flex flex-col gap-6">
           <div className=" flex flex-col gap-2">
             <h1 className=" font-bold text-3xl">Your Bag </h1>
             <p>
               Items in your bag not reserved- check out now to make them yours.
             </p>
           </div>
-          <div className=" flex gap-7">
+          <div className=" flex flex-col sm:flex-row gap-3 sm:gap-7">
             <Image
               className=" max-w-52"
               src={product_img}
               alt="Product image"
             />
             <div className=" w-full flex flex-col gap-3">
-              <div className=" flex justify-between w-full font-bold text-2xl">
+              <div className=" flex gap-2 justify-between w-full font-bold text-xl lg:text-2xl">
                 <h1>DROPSET TRAINER SHOES</h1>
                 <h1 className=" text-[#FF0000]">$130.00</h1>
               </div>
-              <h1 className=" font-semibold text-xl">
+              <h1 className=" font-semibold text-sm md:text-base lg:text-xl">
                 Men’s Road Running Shoes{" "}
               </h1>
-              <h1 className=" font-semibold text-xl">
+              <h1 className=" font-semibold text-sm md:text-base lg:text-xl">
                 Enamel Blue/ University White
               </h1>
-              <div className=" flex items-center gap-5">
+              <div className=" flex items-center gap-3 sm:gap-5 text-sm lg:text-base">
                 <FormControl size="small" className=" font-medium ">
                   <InputLabel id="demo-simple-select-label">SIZE 10</InputLabel>
                   <Select
@@ -85,16 +85,16 @@ export default function page() {
                   </Select>
                 </FormControl>
               </div>
-              <div className=" mt-2 text-2xl flex items-center gap-5">
+              <div className=" mt-2 text-lg md:text-xl lg:text-2xl flex items-center gap-5">
                 <FaRegHeart />
                 <RiDeleteBin2Line />
               </div>
             </div>
           </div>
         </div>
-        <div className=" p-6 flex flex-col gap-4">
-          <h1 className="font-bold text-3xl">Order Summary</h1>
-          <div className=" flex flex-col gap-2 w-full text-lg">
+        <div className=" p-6 flex flex-col gap-4 bg-white lg:bg-transparent rounded-xl">
+          <h1 className="font-bold text-2xl sm:text-3xl">Order Summary</h1>
+          <div className=" flex flex-col gap-2 w-full text-sm sm:text-base lg:text-lg">
             <div className=" flex justify-between items-center w-full">
               <h1 className=" font-semibold">1 ITEM</h1>
               <h2 className=" font-medium">$130.00</h2>
@@ -112,7 +112,7 @@ export default function page() {
               <h2 className=" ">$136.99</h2>
             </div>
           </div>
-          <button className=" w-full text-white bg-[#232321] py-3 px-6 font-medium text-sm rounded-lg">
+          <button className=" w-full text-white bg-[#232321] py-2 sm:py-3 px-6 font-medium text-sm rounded-lg">
             CHECKOUT
           </button>
           <h1 className=" font-semibold underline">Use a promo code</h1>

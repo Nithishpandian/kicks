@@ -76,28 +76,28 @@ export default function Home() {
 
   return (
     <div className=" ">
-      <div className=" text-center text-[14rem] font-black px-10">
+      <div className=" text-center text-5xl sm:text-6xl md:text-7xl lg:text-9xl 2xl:text-[14rem] font-black px-10 py-7 2xl:py-0">
         DO IT <span className=" text-[#FF0000]">RIGHT</span>
       </div>
       <ProductOfTheYear />
-      <div className=" px-10 my-16 flex flex-col gap-10">
-        <div className=" flex items-end justify-between">
-          <h1 className=" text-7xl font-black text-[#232321]">
+      <div className=" px-4 sm:px-6 md:px-10 my-16 flex flex-col gap-10">
+        <div className=" flex items-end justify-between gap-2">
+          <h1 className=" text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-[#232321]">
             <p>Don’t miss out</p> <p>new drops</p>
           </h1>
-          <button className=" text-white bg-[#FF0000] py-3 px-6 font-medium text-sm rounded-lg">
+          <button className="bg-[#FF0000] text-white py-1.5 sm:py-3 px-3 sm:px-6 font-medium text-xs sm:text-sm rounded">
             SHOP NEW DROPS
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center sm:justify-around gap-4 w-full">
           {newDropProducts.map((product, index) => (
             <NewDropProducts key={index} product={product} />
           ))}
         </div>
       </div>
       <div className=" flex flex-col gap-12 pt-16 bg-[#232321]">
-        <div className=" px-20 flex items-center justify-between">
-          <h1 className=" text-white font-bold text-7xl">CATEGORIES</h1>
+        <div className=" px-4 sm:px-6 md:px-14 lg:px-20 flex items-center justify-between">
+          <h1 className=" text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">CATEGORIES</h1>
           <div className=" flex gap-2">
             <button className=" p-2 bg-[#9f9f9f] rounded">
               <IoIosArrowBack />
@@ -107,17 +107,17 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className=" pl-20 grid grid-cols-2">
+        <div className=" pl-4 sm:pl-6 md:pl-14 lg:pl-20 grid grid-cols-1 sm:grid-cols-2">
           <div className=" bg-[#ECEEF0] text-[#212321] rounded-tl-3xl px-8 py-5">
             <div className=" flex justify-center items-end ">
               <Image
                 src={shoe5_img}
-                className=" max-h-[400px] object-cover"
+                className=" max-h-72 sm:max-h-[400px] object-cover"
                 alt="Shoe "
               />
             </div>
             <div className=" flex justify-between items-end">
-              <div className=" text-3xl font-bold">
+              <div className=" text-2xl sm:text-3xl font-bold">
                 <p>LIFESTYLE</p>
                 <p>SHOES</p>
               </div>
@@ -130,12 +130,12 @@ export default function Home() {
             <div className=" flex justify-center items-end ">
               <Image
                 src={shoe6_img}
-                className=" max-h-[400px] object-cover"
+                className=" max-h-72 sm:max-h-[400px] object-cover"
                 alt="Shoe "
               />
             </div>
             <div className=" flex justify-between items-end">
-              <div className=" text-3xl font-bold">
+              <div className=" text-2xl sm:text-3xl font-bold">
                 <p>BASKETBALL</p>
                 <p>SHOES</p>
               </div>
@@ -147,14 +147,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className=" px-20 py-20 flex flex-col gap-8">
+      <div className=" px-4 sm:px-6 md:px-14 lg:px-20 py-20 flex flex-col gap-8">
         <div className=" flex items-end justify-between">
-          <h1 className=" text-7xl font-black text-[#232321]">REVIEWS</h1>
-          <button className=" text-white bg-[#FF0000] py-3 px-6 font-medium text-sm rounded-lg">
+          <h1 className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#232321]">REVIEWS</h1>
+          <button className=" text-white bg-[#FF0000] py-2 sm:py-3 px-4 sm:px-6 font-medium text-sm rounded-lg">
             SEE ALL
           </button>
         </div>
-        <div className=" flex items-center justify-around gap-4">
+        <div className=" flex items-center justify-around flex-wrap gap-4">
           {reviewData.map((data, index) => (
             <ReviewCardLanding key={index} product={data} />
           ))}

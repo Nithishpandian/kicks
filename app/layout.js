@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`text-[#212321] bg-[#E7E7E3] min-h-screen py-5 ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`text-[#212321] bg-[#E7E7E3] min-h-screen md:pt-5 pb-5 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         {children}

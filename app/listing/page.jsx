@@ -153,22 +153,28 @@ export default function page() {
   };
 
   return (
-    <div className=" flex flex-col gap-10 p-12">
+    <div className=" px-3 py-8 sm:p-5 md:p-8 lg:p-10 xl:p-12 flex flex-col gap-6 sm:gap-10">
       <div className=" relative w-full">
-        <Image className=" w-full" src={banner_img} alt="Banner image" />
-        <div className=" absolute left-10 top-1/2 -translate-y-1/2 flex flex-col gap-3">
-          <h2 className=" text-2xl text-[#E7E7E3] font-medium">
+        <Image
+          className=" w-full min-h-64 sm:min-h-80 rounded-3xl"
+          src={banner_img}
+          alt="Banner image"
+        />
+        <div className=" absolute left-5 sm:left-7 md:left-10 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+          <h2 className=" text-xl sm:text-2xl text-[#E7E7E3] font-medium">
             Limited time only
           </h2>
-          <h1 className=" text-5xl font-bold text-white">Get 30% off</h1>
-          <p className="text-[#E7E7E3] w-[400px] text-lg">
+          <h1 className=" text-4xl sm:text-5xl font-bold text-white">
+            Get 30% off
+          </h1>
+          <p className="text-[#E7E7E3] w-72 sm:w-[400px] text-sm sm:text-base md:text-lg">
             Sneakers made with your comfort in mind so you can put all of your
             focus into your next session.
           </p>
         </div>
       </div>
-      <div className=" grid grid-cols-4 gap-10">
-        <div className=" flex flex-col gap-3">
+      <div className=" grid grid-cols-1 md:grid-cols-4 gap-5 sm:gap-6 md:gap-8 xl:gap-10">
+        <div className=" hidden md:flex flex-col gap-3">
           <div>
             <h1 className=" text-3xl font-bold">Life Style Shoes</h1>
             <p className=" font-semibold mt-1 ">122 items</p>
@@ -191,7 +197,7 @@ export default function page() {
             {/* Size */}
             <div className="mb-6">
               <h3 className=" font-bold">SIZE</h3>
-              <div className="grid grid-cols-5 gap-2 mt-2">
+              <div className=" flex items-center flex-wrap gap-2 mt-2">
                 {sizeArray.map((item, index) => (
                   <button
                     onClick={() => setSelectedSize(item.size)}
@@ -214,7 +220,7 @@ export default function page() {
             {/* Color */}
             <div className="mb-6">
               <h3 className=" font-bold">COLOR</h3>
-              <div className="grid grid-cols-5 gap-2 mt-2">
+              <div className="flex items-center flex-wrap gap-2 mt-2">
                 {[
                   "#3B82F6",
                   "#FBBF24",
@@ -284,13 +290,13 @@ export default function page() {
                 max="1000"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                className="w-full"
+                className="w-full max-w-80"
               />
             </div>
           </div>
         </div>
-        <div className=" col-span-3 flex flex-col gap-3">
-          <div className=" flex items-end justify-end">
+        <div className="lg:col-span-3 flex flex-col gap-3">
+          <div className=" flex items-end justify-end text-sm sm:text-base">
             <FormControl size="small" className=" font-medium ">
               <InputLabel
                 id="demo-simple-select-label"
@@ -315,17 +321,137 @@ export default function page() {
               </Select>
             </FormControl>
           </div>
-          <div className=" grid grid-cols-3 gap-10">
+          <div className=" flex md:hidden flex-col gap-3">
+            <h1 className=" text-xl font-bold my-1">Filters</h1>
+            <div className="">
+              {/* Refine By */}
+              <div className="mb-6">
+                <h3 className=" font-bold">REFINE BY</h3>
+                <div className="flex gap-3 mt-2">
+                  <button className="pt-1 pb-1.5 px-4 font-medium text-sm bg-[#4A69E2] text-white rounded-lg">
+                    Mens
+                  </button>
+                  <button className="pt-1 pb-1.5 px-4 font-medium text-sm bg-[#4A69E2] text-white rounded-lg">
+                    Casual
+                  </button>
+                </div>
+              </div>
+
+              {/* Size */}
+              <div className="mb-6">
+                <h3 className=" font-bold">SIZE</h3>
+                <div className=" flex items-center flex-wrap gap-2 mt-2">
+                  {sizeArray.map((item, index) => (
+                    <button
+                      onClick={() => setSelectedSize(item.size)}
+                      className={` cursor-pointer py-3 px-5 rounded-xl font-medium ${
+                        selectedSize === item.size
+                          ? " text-white bg-[#232321]"
+                          : item.isAvailable
+                          ? "bg-white text-[#232321]"
+                          : "bg-[#D2D1D3] text-[#8F8C91]"
+                      } `}
+                      key={index}
+                      disabled={item.isAvailable === true ? false : true}
+                    >
+                      {item.size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Color */}
+              <div className="mb-6">
+                <h3 className=" font-bold">COLOR</h3>
+                <div className=" flex items-center flex-wrap gap-2 mt-2">
+                  {[
+                    "#3B82F6",
+                    "#FBBF24",
+                    "#047857",
+                    "#374151",
+                    "#F97316",
+                    "#94A3B8",
+                    "#A16207",
+                    "#B45309",
+                  ].map((color, index) => (
+                    <div
+                      key={index}
+                      className="w-8 h-8 rounded-md"
+                      style={{ backgroundColor: color }}
+                    ></div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Shoe Types */}
+              <div className="mb-6">
+                <h3 className=" font-bold">SIZE</h3>
+                <div className="flex flex-col gap-2 mt-2">
+                  {[
+                    "Casual shoes",
+                    "Runners",
+                    "Hiking",
+                    "Sneaker",
+                    "Basketball",
+                    "Golf",
+                    "Outdoor",
+                  ].map((type, index) => (
+                    <label
+                      key={index}
+                      className="flex items-center font-medium bg-transparent"
+                    >
+                      <input type="checkbox" className="mr-2 bg-transparent" />
+                      {type}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Gender */}
+              <div className="mb-6">
+                <h3 className=" font-bold">GENDER</h3>
+                <div className="flex flex-col gap-2 mt-2">
+                  {["Men", "Women"].map((gender, index) => (
+                    <label
+                      key={index}
+                      className="flex items-center font-medium"
+                    >
+                      <input type="checkbox" className="mr-2" />
+                      {gender}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Price Slider */}
+              <div className="mb-6">
+                <h3 className=" font-bold">PRICE</h3>
+                <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
+                  <span>${0}</span>
+                  <span>${1000}</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center flex-wrap justify-around gap-4">
             {newDropProducts.map((product, index) => (
               <NewDropProducts key={index} product={product} />
             ))}
           </div>
-          <div className=" flex items-center justify-center mt-3">
-            <div className="flex items-center justify-center gap-2 p-4 text-sm font-medium">
+          <div className=" flex items-center justify-end">
+            <div className="flex items-center justify-center gap-2 py-4 px-2 sm:px-4 text-[10px] sm:text-xs font-medium">
               {/* Previous Button */}
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
-                className="px-4 py-2 border border-gray-400 rounded-md"
+                className=" hidden sm:flex px-4 py-2 border border-gray-400 rounded-md text-nowrap"
                 disabled={currentPage === 1}
               >
                 &lt; PREVIOUS
@@ -333,7 +459,7 @@ export default function page() {
 
               {/* Page Numbers */}
               {Array.from({ length: totalPages }, (_, index) => index + 1)
-                .slice(0, 4)
+                .slice(0, 3)
                 .map((page) => (
                   <button
                     key={page}
@@ -349,7 +475,7 @@ export default function page() {
                 ))}
 
               {/* Ellipsis */}
-              <span className="px-4 py-2">...</span>
+              <span className=" px-1 sm:px-4 py-2">...</span>
 
               {/* Last Page */}
               <button
@@ -362,7 +488,7 @@ export default function page() {
               {/* Next Button */}
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
-                className="px-4 py-2 border border-gray-400 rounded-md"
+                className="px-4 py-2 border border-gray-400 rounded-md text-nowrap"
                 disabled={currentPage === totalPages}
               >
                 NEXT &gt;

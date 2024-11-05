@@ -6,17 +6,17 @@ export default function page() {
   const [tab, setTab] = useState("newUpload");
 
   return (
-    <div className=" flex flex-col gap-10 p-10">
+    <div className=" px-3 py-8 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-10">
       <h1 className=" text-3xl font-bold">Media Status</h1>
       <div className="flex flex-col items-center min-h-screen py-10">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow pt-6">
           {/* Tabs */}
-          <div className=" grid grid-cols-3 justify-between items-center w-full mb-4">
-            <div></div>
-            <div>
+          <div className=" grid grid-cols-2 sm:grid-cols-3 justify-between items-center w-full mb-4 px-5">
+            <div className=" hidden sm:flex"></div>
+            <div className=" flex items-center">
               <button
                 onClick={() => setTab("newUpload")}
-                className={`px-4 py-2 rounded-full text-sm font-medium ${
+                className={` text-nowrap px-4 py-2 rounded-full text-sm font-medium ${
                   tab === "newUpload" ? "bg-black text-white" : "text-gray-500"
                 }`}
               >
@@ -32,7 +32,7 @@ export default function page() {
               </button>
             </div>
             <div className=" flex justify-end items-center">
-              <button className="text-gray-500 mr-6">
+              <button className="text-gray-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -54,7 +54,7 @@ export default function page() {
           {/* Content */}
           {tab === "newUpload" ? (
             <div className=" mx-6 mb-6 bg-gray-50 rounded-lg border-dashed border-2 border-gray-300 h-40 flex items-center justify-center">
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm sm:text-base px-4 text-center">
                 Click to browse or drag and drop your files
               </p>
             </div>
@@ -63,14 +63,14 @@ export default function page() {
               {[0, 1, 2].map((item, index) => (
                 <div
                   key={index}
-                  className="flex justify-between items-center py-3 px-4 border-b border-gray-200"
+                  className="flex justify-between items-center gap-2 py-3 px-4 border-b border-gray-200"
                 >
                   {/* File Information */}
                   <div className="flex items-center space-x-4">
                     <RiGalleryFill />
                     <div>
-                      <p className="font-medium text-gray-800 text-sm truncate">
-                        man-holding-mobile-phone-while...
+                      <p className="font-medium text-gray-800 text-sm ">
+                        man holding mobile phone while...
                       </p>
                       <p className="text-gray-400 text-xs">7 days ago</p>
                     </div>
@@ -78,10 +78,16 @@ export default function page() {
 
                   {/* Expiration Info */}
                   <div className=" flex justify-between items-center gap-3">
-                    <p className="text-gray-600 text-sm">For 7 Days</p>
+                    <div className=" flex flex-col sm:flex-row items-center gap-1 sm:gap-2 font-medium text-xs">
+                      <p className="text-gray-600 text-[10px] sm:text-sm text-nowrap">
+                        For 7 Days
+                      </p>
 
-                    {/* File Size */}
-                    <p className="text-gray-600 text-sm">92KB</p>
+                      {/* File Size */}
+                      <p className="text-gray-600 text-[10px] sm:text-sm">
+                        92KB
+                      </p>
+                    </div>
 
                     {/* Options Button */}
                     <button className="text-gray-500">

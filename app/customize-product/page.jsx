@@ -94,12 +94,14 @@ export default function page() {
   ];
 
   return (
-    <div className=" p-10 flex flex-col gap-10">
-      <h1 className=" text-4xl font-bold ">Your T-Shirt</h1>
-      <div className=" grid grid-cols-4 gap-10">
-        <div className=" flex flex-col gap-3">
-          <div className=" h-full mb-4 bg-white p-4 rounded-xl flex flex-col gap-4">
-            <h1 className=" text-4xl font-bold">
+    <div className=" px-3 py-8 sm:p-5 md:p-8 lg:p-10 flex flex-col gap-6 sm:gap-10">
+      <h1 className=" text-2xl sm:text-3xl md:text-4xl font-bold ">
+        Your T-Shirt
+      </h1>
+      <div className=" flex items-start justify-center flex-wrap gap-6 sm:gap-3 md:gap-10">
+        <div className=" flex flex-col gap-3 max-w-72 md:max-w-80 w-full h-full">
+          <div className=" h-full min-h-[410px] mb-4 bg-white p-4 rounded-xl flex flex-col gap-4">
+            <h1 className=" text-3xl sm:text-4xl font-bold">
               Select the Items where you want to edit
             </h1>
             <p className=" text-sm font-medium text-stone-700">

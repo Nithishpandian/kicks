@@ -7,8 +7,8 @@ import { FaApple } from "react-icons/fa";
 
 export default function page() {
   return (
-    <div className=" grid grid-cols-2 gap-16 p-12">
-      <div className=" py-6 px-10 flex flex-col gap-4">
+    <div className=" grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7 md:gap-7 lg:gap-12 xl:gap-16 px-4 py-8 sm:p-5 md:p-8 lg:p-12">
+      <div className=" py-6 sm:px-10 flex flex-col gap-4">
         <div>
           <h3 className="text-3xl font-bold">Login</h3>
           <h2 className=" underline font-semibold ">Forgot your password ?</h2>
@@ -66,7 +66,7 @@ export default function page() {
       </div>
 
       <div className=" bg-gray-100 rounded-lg py-7 px-8 font-medium h-fit">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className=" text-3xl sm:text-4xl font-bold mb-4">
           Join Kicks Club Get Rewarded Today.
         </h1>
         <p className="text-gray-700 mb-4">

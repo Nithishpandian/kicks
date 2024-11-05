@@ -6,7 +6,7 @@ import shoe2_img from "../../app/assests/images/landing/shoe2.png";
 import shoe3_img from "../../app/assests/images/landing/shoe3.png";
 import shoe4_img from "../../app/assests/images/landing/shoe4.png";
 
-export default function YouMayAlsoLike() {
+export default function YouMayAlsoLike({ yourItem }) {
   const newDropProducts = [
     {
       id: 1,
@@ -39,21 +39,25 @@ export default function YouMayAlsoLike() {
   ];
 
   return (
-    <div className=" px-10 my-16 flex flex-col gap-10">
+    <div className=" sm:px-5 md:px-1 lg:px-10 my-16 flex flex-col gap-10">
       <div className=" flex items-end justify-between">
-        <h1 className=" text-4xl font-black text-[#232321]">
-          You may also like
+        <h1 className=" text-3xl sm:text-4xl font-black text-[#232321]">
+          {yourItem === true ? "Your Items" : "You may also like"}
         </h1>
-        <div className=" flex gap-2 text-white">
-          <button className=" p-2 bg-[#9f9f9f] rounded">
-            <IoIosArrowBack />
-          </button>
-          <button className=" p-2 bg-[#232321] rounded">
-            <IoIosArrowForward />
-          </button>
-        </div>
+        {yourItem === true ? (
+          <button className=" text-[#FF0000] font-medium">View All</button>
+        ) : (
+          <div className=" flex gap-2 text-white">
+            <button className=" p-2 bg-[#9f9f9f] rounded">
+              <IoIosArrowBack />
+            </button>
+            <button className=" p-2 bg-[#232321] rounded">
+              <IoIosArrowForward />
+            </button>
+          </div>
+        )}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-6">
+      <div className="flex items-center flex-wrap justify-around gap-6">
         {newDropProducts.map((product, index) => (
           <NewDropProducts key={index} product={product} />
         ))}

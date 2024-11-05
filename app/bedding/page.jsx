@@ -84,10 +84,14 @@ export default function page() {
     },
   ];
 
+  const images = [product_img1, product_img2, product_img3, product_img4];
+
+  const [selectedImage, setSelectedImage] = useState(images[0]);
+
   return (
-    <div>
-      <div className=" grid grid-cols-5 gap-6 p-10">
-        <div className=" col-span-3 grid grid-cols-2 gap-4">
+    <div className=" px-3 py-8 sm:p-5 md:p-8 lg:p-10 flex flex-col gap-6 sm:gap-10">
+      <div className=" grid grid-cols-1 lg:grid-cols-5 gap-6 ">
+        <div className=" hidden lg:col-span-3 lg:grid grid-cols-2 gap-4 h-fit">
           <Image
             className=" rounded-tl-3xl"
             src={product_img1}
@@ -109,26 +113,48 @@ export default function page() {
             alt="Product image"
           />
         </div>
-        <div className="col-span-2 flex flex-col gap-4">
+        <div className=" flex lg:hidden flex-col items-start">
+          <div className="w-full max-h-96 object-cover mb-4">
+            <Image
+              src={selectedImage}
+              alt="Selected"
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+          <div className="flex gap-2">
+            {images.map((image, index) => (
+              <button key={index} onClick={() => setSelectedImage(image)}>
+                <Image
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  className={`w-16 h-16 object-cover rounded-lg ${
+                    selectedImage === image ? "ring-2 ring-blue-500" : ""
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="lg:col-span-2 flex flex-col gap-4">
           <button className="bg-[#FF0000] pt-1 pb-1.5 px-3 font-medium text-white rounded-xl h-fit w-fit">
             New Release
           </button>
-          <h1 className=" text-4xl font-extrabold">
+          <h1 className=" text-3xl sm:text-4xl font-extrabold">
             ADIDAS 4DFWD X PARLEY RUNNING SHOES
           </h1>
           <p className=" text-3xl font-extrabold text-[#FF0000]">$125.00</p>
-          <div className=" bg-white font-extrabold rounded-xl p-4 flex items-center justify-between">
+          <div className=" bg-white font-extrabold rounded-xl p-4 flex flex-col sm:flex-row gap-4 sm:gap-1 sm:items-center justify-between">
             <div className=" flex flex-col gap-1">
               <h3 className=" text-[#686A6C] ">Highest bid</h3>
-              <h1 className=" text-3xl font-black">1.1 ETH</h1>
+              <h1 className=" sm:text-2xl lg:text-3xl font-black">1.1 ETH</h1>
               <h3 className=" text-[#686A6C]">$1,815.70</h3>
             </div>
             <div className=" flex flex-col gap-1">
               <h3 className=" text-[#686A6C] ">Auction ends in</h3>
               <div className=" grid grid-cols-3 justify-between gap-4">
-                <h1 className=" text-3xl font-black">23</h1>
-                <h1 className=" text-3xl font-black">59</h1>
-                <h1 className=" text-3xl font-black">59</h1>
+                <h1 className=" text-2xl lg:text-3xl font-black">23</h1>
+                <h1 className=" text-2xl lg:text-3xl font-black">59</h1>
+                <h1 className=" text-2xl lg:text-3xl font-black">59</h1>
               </div>
               <div className=" grid grid-cols-3 justify-between gap-4">
                 <h3 className=" text-[#686A6C]">hours</h3>
@@ -137,14 +163,14 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className=" bg-white rounded-xl py-5 px-7 flex flex-col justify-between gap-7">
+          <div className=" bg-white rounded-xl py-3 sm:py-5 px-5 sm:px-7 flex flex-col justify-between gap-7">
             <button className=" bg-[#FF0000] py-3 px-4 rounded-xl text-white font-semibold">
               PLACE A BID
             </button>
             <div className=" flex items-end justify-between gap-5 font-black">
               <div className="">
                 <h3 className=" text-[#686A6C] ">BUY NOW</h3>
-                <h1 className=" text-3xl font-black">$125.00</h1>
+                <h1 className=" text-2xl sm:text-3xl font-black">$125.00</h1>
               </div>
               <button className=" text-white bg-[#232321] py-2 px-6 rounded-md font-bold">
                 BUY NOW
@@ -152,7 +178,7 @@ export default function page() {
             </div>
           </div>
 
-          <div className=" flex flex-col gap-2 text-lg">
+          <div className=" flex flex-col gap-2 text-sm sm:text-base md:text-lg">
             <h1 className=" font-black text-lg">ABOUT THE PRODUCT</h1>
             <p>Shadow Navy / Army Green</p>
             <p className=" my-1.5">

@@ -16,8 +16,8 @@ export default function page() {
   const [newsletter, setNewsletter] = useState(true);
 
   return (
-    <div className=" grid grid-cols-3 gap-16 p-12">
-      <div className=" col-span-2">
+    <div className=" grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-7 md:gap-7 lg:gap-4 xl:gap-16 px-4 py-8 sm:p-5 md:p-8 lg:p-10 xl:p-12">
+      <div className=" order-2 lg:order-1 lg:col-span-2">
         <h2 className=" underline font-semibold mb-4">
           Login and Checkout faster
         </h2>
@@ -157,13 +157,13 @@ export default function page() {
           />
         </div>
 
-        <div className=" grid grid-cols-3">
-          <button className="w-full bg-[#232321] text-white py-3 px-3 text-sm rounded-md font-semibold hover:bg-gray-800">
+        <div className=" grid sm:grid-cols-3">
+          <button className=" text-nowrap w-full bg-[#232321] text-white py-3 px-3 text-sm rounded-md font-semibold hover:bg-gray-800">
             REVIEW AND PAY
           </button>
         </div>
       </div>
-      <div className=" flex flex-col gap-6">
+      <div className=" order-1 lg:order-2 flex flex-col gap-6">
         <div className=" p-6 flex flex-col gap-4 bg-white rounded-xl">
           <h1 className="font-bold text-2xl">Order Summary</h1>
           <div className=" flex flex-col gap-2 w-full ">
@@ -189,7 +189,7 @@ export default function page() {
           <div className=" flex flex-col gap-2">
             <h1 className=" font-bold text-2xl">Order details</h1>
           </div>
-          <div className=" flex gap-7">
+          <div className=" flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-7">
             <Image
               className=" max-w-40"
               src={product_img}

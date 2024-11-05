@@ -65,11 +65,13 @@ export default function page() {
     },
   ];
   return (
-    <div className=" p-10 flex flex-col gap-10">
-      <h1 className=" text-4xl font-bold">UPI History</h1>
-      <div className=" bg-gray-100 rounded-lg p-6">
+    <div className=" px-3 py-8 sm:p-10 flex flex-col gap-6 sm:gap-10">
+      <h1 className=" text-2xl sm:text-3xl md:text-4xl font-bold">
+        UPI History
+      </h1>
+      <div className=" bg-gray-100 rounded-lg p-3 sm:p-6">
         <div className=" flex items-center justify-between">
-          <h2 className="text-lg font-bold mb-4">
+          <h2 className=" text-base sm:text-lg font-bold mb-4">
             Upi Id added History of last 3 months
           </h2>
           <BsThreeDotsVertical />
@@ -87,12 +89,14 @@ export default function page() {
               {transactions.map((transaction, index) => (
                 <tr
                   key={index}
-                  className="border-t border-gray-200 text-sm font-medium"
+                  className="border-t border-gray-200 text-xs sm:text-sm font-medium"
                 >
                   <td className="py-3 text-gray-800">
                     {transaction.productName}
                   </td>
-                  <td className="py-3 text-gray-800">{transaction.date}</td>
+                  <td className="py-3 text-gray-800 px-1">
+                    {transaction.date}
+                  </td>
                   <td className="py-3 text-gray-800">{transaction.amount}</td>
                 </tr>
               ))}
@@ -101,11 +105,11 @@ export default function page() {
         </div>
       </div>
       <div className=" flex items-center justify-end">
-        <div className="flex items-center justify-center gap-2 p-4 text-xs font-medium">
+        <div className="flex items-center justify-center gap-2 py-4 px-2 sm:px-4 text-[10px] sm:text-xs font-medium">
           {/* Previous Button */}
           <button
             onClick={() => handlePageChange(currentPage - 1)}
-            className="px-4 py-2 border border-gray-400 rounded-md"
+            className=" hidden sm:flex px-4 py-2 border border-gray-400 rounded-md text-nowrap"
             disabled={currentPage === 1}
           >
             &lt; PREVIOUS
@@ -113,7 +117,7 @@ export default function page() {
 
           {/* Page Numbers */}
           {Array.from({ length: totalPages }, (_, index) => index + 1)
-            .slice(0, 4)
+            .slice(0, 3)
             .map((page) => (
               <button
                 key={page}
@@ -129,7 +133,7 @@ export default function page() {
             ))}
 
           {/* Ellipsis */}
-          <span className="px-4 py-2">...</span>
+          <span className=" px-1 sm:px-4 py-2">...</span>
 
           {/* Last Page */}
           <button
@@ -142,7 +146,7 @@ export default function page() {
           {/* Next Button */}
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            className="px-4 py-2 border border-gray-400 rounded-md"
+            className="px-4 py-2 border border-gray-400 rounded-md text-nowrap"
             disabled={currentPage === totalPages}
           >
             NEXT &gt;
