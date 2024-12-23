@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import avatar_img from "../assests/images/text-quotes/avatar.png";
 import Image from "next/image";
 
 function page() {
+  const [quoteInput, setQuoteInput] = useState(
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+  );
   return (
     <div className=" px-3 py-8 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-10">
       <div className="flex items-center justify-center p-5 sm:p-20 md:p-28 rounded-3xl bg-gradient-to-r from-purple-500 to-pink-500">
@@ -18,11 +22,7 @@ function page() {
                 />
               </div>
               <FaQuoteLeft className="text-3xl text-white mb-4" />
-              <p className=" text-sm sm:text-base md:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud.
-              </p>
+              <p className=" text-sm sm:text-base md:text-lg">{quoteInput}</p>
             </div>
             <Image
               src={avatar_img} // Replace with actual image URL
@@ -47,8 +47,10 @@ function page() {
           </h1>
           <textarea
             type="text"
+            onChange={(e) => setQuoteInput(e.target.value)}
+            value={quoteInput}
             style={{ overflow: "hidden" }}
-            className=" bg-transparent border-b border-stone-500 placeholder:font-bold placeholder:text-xl py-2 px-7 w-full"
+            className=" bg-transparent border-b border-stone-500 font-bold text-xl text-stone-600 placeholder:font-bold placeholder:text-xl py-2 px-7 w-full focus:outline-none"
             placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
           />
           <div className=" flex items-center justify-end gap-4">

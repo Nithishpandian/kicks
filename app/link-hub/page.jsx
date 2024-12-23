@@ -41,8 +41,8 @@ import { MdBlock } from "react-icons/md";
 
 const page = () => {
   const tabs = ["Links", "Design", "Settings"];
-  const [activeTab, setActiveTab] = useState("Design");
-  const [design, setDesign] = useState("Own");
+  const [activeTab, setActiveTab] = useState("Links");
+  const [design, setDesign] = useState("Library");
 
   const [bgColor, setBgColor] = useState("bg-black");
   const [buttonStyle, setButtonStyle] = useState("bg-black text-white");

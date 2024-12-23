@@ -11,6 +11,18 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        rubik: ["Rubik", "sans-serif"],
+      },
+      animation: {
+        marquee: "marquee 40s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [],

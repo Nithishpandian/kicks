@@ -51,13 +51,13 @@ export default function Navbar() {
           <IoIosMenu className="text-3xl text-stone-800" />
         )}
       </div>
-      <div>
+      <Link href={"/"}>
         <Image
           className="w-20 sm:w-28 md:w-40"
           src={kicks_logo}
           alt="Kicks_logo"
         />
-      </div>
+      </Link>
       <div className="flex items-center gap-7">
         <IoSearch className="text-lg hidden md:flex" />
         <FaUser />

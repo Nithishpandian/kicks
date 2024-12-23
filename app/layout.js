@@ -23,11 +23,30 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`text-[#212321] bg-[#E7E7E3] min-h-screen md:pt-5 pb-5 ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`text-[#212321] bg-[#E7E7E3] min-h-screen font-rubik ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="relative w-full py-4 bg-black overflow-hidden">
+          <div className="flex whitespace-nowrap animate-marquee">
+            <div className="flex gap-16 text-white uppercase font-semibold text-xs tracking-wide">
+              <span>Buy 3 T-Shirts & Get 20% Off</span>
+              <span>•</span>
+              <span>Free Shipping Across Globe</span>
+              <span>•</span>
+              <span>COD Available</span>
+              <span>•</span>
+              <span>Buy 3 T-Shirts & Get 20% Off</span>
+              <span>•</span>
+              <span>Free Shipping Across Globe</span>
+              <span>•</span>
+              <span>COD Available</span>
+            </div>
+          </div>
+        </div>
+        <div className=" md:pt-5 pb-5">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

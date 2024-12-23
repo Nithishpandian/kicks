@@ -83,13 +83,13 @@ export default function Home() {
       <div className=" px-4 sm:px-6 md:px-10 my-16 flex flex-col gap-10">
         <div className=" flex items-end justify-between gap-2">
           <h1 className=" text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-[#232321]">
-            <p>Don’t miss out</p> <p>new drops</p>
+            <p>DON'T MISS OUT</p> <p>NEW DROPS</p>
           </h1>
           <button className="bg-[#FF0000] text-white py-1.5 sm:py-3 px-3 sm:px-6 font-medium text-xs sm:text-sm rounded">
             SHOP NEW DROPS
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center sm:justify-around gap-4 w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center sm:justify-around gap-4 w-full">
           {newDropProducts.map((product, index) => (
             <NewDropProducts key={index} product={product} />
           ))}
@@ -97,7 +97,9 @@ export default function Home() {
       </div>
       <div className=" flex flex-col gap-12 pt-16 bg-[#232321]">
         <div className=" px-4 sm:px-6 md:px-14 lg:px-20 flex items-center justify-between">
-          <h1 className=" text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">CATEGORIES</h1>
+          <h1 className=" text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            CATEGORIES
+          </h1>
           <div className=" flex gap-2">
             <button className=" p-2 bg-[#9f9f9f] rounded">
               <IoIosArrowBack />
@@ -149,7 +151,9 @@ export default function Home() {
 
       <div className=" px-4 sm:px-6 md:px-14 lg:px-20 py-20 flex flex-col gap-8">
         <div className=" flex items-end justify-between">
-          <h1 className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#232321]">REVIEWS</h1>
+          <h1 className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#232321]">
+            REVIEWS
+          </h1>
           <button className=" text-white bg-[#FF0000] py-2 sm:py-3 px-4 sm:px-6 font-medium text-sm rounded-lg">
             SEE ALL
           </button>

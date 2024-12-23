@@ -57,7 +57,7 @@ export default function YouMayAlsoLike({ yourItem }) {
           </div>
         )}
       </div>
-      <div className="flex items-center flex-wrap justify-around gap-6">
+      <div className=" grid grid-cols-2 sm:flex items-center flex-wrap justify-around gap-6">
         {newDropProducts.map((product, index) => (
           <NewDropProducts key={index} product={product} />
         ))}
